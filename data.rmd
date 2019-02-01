@@ -29,7 +29,9 @@ The most common location for package data is (surprise!) `data/`. Each file in t
 
 ```{r, eval = FALSE}
 x <- sample(1000)
-devtools::use_data(x, mtcars)
+# devtools::use_data(x, mtcars)
+# shouldn't this now be
+usethis::use_data(x, mtcars)
 ```
 
 It's possible to use other types of files, but I don't recommend it because `.RData` files are already fast, small and explicit. Other options are described in `data()`. For larger datasets, you may want to experiment with the compression setting. The default is `bzip2`, but sometimes `gzip` or `xz` can create smaller files (typically at the expense of slower loading times).
